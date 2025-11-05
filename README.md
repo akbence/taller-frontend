@@ -1,0 +1,1 @@
+Frontend for the Tallér backend. As I have limited knowledge in the most trending cutting-edge frontend techs, I manly use LLM-s and prompts to build up the project to be a whole usable experience along with the Tallér backend.
