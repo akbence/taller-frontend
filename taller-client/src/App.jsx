@@ -10,16 +10,18 @@ import TransactionForm from './components/features/TransactionForm';
 
 const App = () => {
     // State to manage authentication
-    const [token, setToken] = useState(null);
-    const [user, setUser] = useState(null);
+    const [token, setToken] = useState(() => localStorage.getItem('token') || null);
+    const [user, setUser] = useState(() => localStorage.getItem('user') || null);
 
     // State for simple routing: 'auth', 'accountContainer', 'transaction'
-    const [view, setView] = useState('auth');
+    const [view, setView] = useState(() => (localStorage.getItem('token') ? 'accountContainer' : 'auth'));
 
     const handleAuthSuccess = (username, jwtToken) => {
+        localStorage.setItem('token', jwtToken); 
+        localStorage.setItem('user', username); 
         setUser(username);
         setToken(jwtToken);
-        setView('accountContainer'); // Move to account creation after login
+        setView('accountContainer');
     };
 
     const handleLogout = () => {

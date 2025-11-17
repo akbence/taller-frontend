@@ -1,6 +1,6 @@
 // --- API Configuration ---
 // This URL assumes your Spring Boot API is running on port 8080.
-export const BASE_URL = 'http://localhost:8080/api/v1';
+export const BASE_URL = '/api/v1';
 
 // --- Global Data for Select Inputs ---
 export const ACCOUNT_TYPES = ['CHECKING', 'SAVINGS', 'CASH'];
